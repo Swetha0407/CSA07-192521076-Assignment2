@@ -68,8 +68,8 @@ traceroute
 
 Evidence screenshots are stored in:
 
-[Task 4 Evidence](Evidence/tracer.png)
-[Task 4 Evidence](Evidence/op.png)
+![Task 4 Evidence](Evidence/tracer.png)
+![Task 4 Evidence](Evidence/op.png)
 
 | Evidence File | Description |
 |---|---|
