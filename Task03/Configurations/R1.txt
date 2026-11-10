@@ -1,0 +1,38 @@
+
+enable
+configure terminal
+hostname R1
+
+! LAN interface
+interface gigabitEthernet 0/0
+ip address 192.168.10.1 255.255.255.0
+no shutdown
+exit
+
+! Primary serial link
+interface serial 0/0/0
+ip address 10.0.0.1 255.255.255.252
+clock rate 64000
+no shutdown
+exit
+
+! Backup serial link
+interface serial 0/0/1
+ip address 10.0.0.5 255.255.255.252
+clock rate 64000
+no shutdown
+exit
+
+! Primary static route
+ip route 192.168.20.0 255.255.255.0 10.0.0.2
+
+! Floating static backup route (AD 200)
+ip route 192.168.20.0 255.255.255.0 10.0.0.6 200
+
+end
+write memory
+
+! Verification
+show ip interface brief
+show ip route
+ping 192.168.20.1
