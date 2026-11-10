@@ -67,7 +67,7 @@ The primary link is tested first. It is then disabled to verify whether traffic 
 
 All simulation screenshots and verification outputs are stored in the following folder:
 
-- [Task 3 Evidence](Evidence/simulation.png)
+![Task 3 Evidence](Evidence/simulation.png)
 
 | Evidence File | Description |
 |---|---|
