@@ -82,6 +82,8 @@ The VLSM allocation program is provided in the Python folder.
 
 It calculates the smallest suitable subnet for each department, displays the network and host ranges, and identifies the next free address.
 
+## Evidence
+![Task 2 Evidence](Evidence/op.png)
 ## Result
 
 Equal-size subnetting was found unsuitable for the given /24 address block. VLSM successfully allocated all four original networks without overlap. The hostel expansion was found to require additional address space. The four city-campus networks were correctly summarised as 172.16.8.0/22.
