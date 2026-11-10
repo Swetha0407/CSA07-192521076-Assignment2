@@ -102,9 +102,9 @@ The following tests are performed:
 4. Verify the routing table.
 5. Confirm that the new subnet does not overlap existing networks.
 
-Simulation screenshots and validation evidence are stored in:
+Simulation screenshots and validation evidence are stored:
 
-- [Task 7 Evidence](Evidence/)
+![Task 7 Evidence](Evidence/op.png)
 
 ## 8. Trade-off Analysis
 
