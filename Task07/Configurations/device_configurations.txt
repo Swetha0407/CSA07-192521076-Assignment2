@@ -1,0 +1,66 @@
+
+=================================================
+REDESIGNED NETWORK - ROUTER R1
+=================================================
+
+enable
+configure terminal
+hostname R1
+
+! LABS LAN
+interface gigabitEthernet 0/0
+description LABS_NETWORK
+ip address 192.168.10.1 255.255.255.128
+no shutdown
+exit
+
+! HOSTEL LAN
+interface gigabitEthernet 0/1
+description HOSTEL_NETWORK
+ip address 192.168.11.1 255.255.255.192
+no shutdown
+exit
+
+end
+write memory
+
+! VERIFICATION
+show ip interface brief
+show ip route
+show running-config
+
+
+=================================================
+PC ADDRESS CONFIGURATION
+=================================================
+
+LABS PC
+IP Address:      192.168.10.10
+Subnet Mask:     255.255.255.128
+Default Gateway: 192.168.10.1
+
+HOSTEL PC
+IP Address:      192.168.11.10
+Subnet Mask:     255.255.255.192
+Default Gateway: 192.168.11.1
+
+
+=================================================
+CONNECTIVITY TEST
+=================================================
+
+From the Labs PC:
+
+ping 192.168.11.10
+
+From the Hostel PC:
+
+ping 192.168.10.10
+
+
+=================================================
+EXPECTED ROUTING TABLE ENTRIES
+=================================================
+
+C 192.168.10.0/25 is directly connected, GigabitEthernet0/0
+C 192.168.11.0/26 is directly connected, GigabitEthernet0/1
