@@ -1,0 +1,143 @@
+
+! =====================================
+! ROUTER A
+! =====================================
+enable
+configure terminal
+hostname A
+
+interface gigabitEthernet 0/0
+ip address 10.0.12.1 255.255.255.252
+no shutdown
+exit
+
+interface gigabitEthernet 0/1
+ip address 10.0.13.1 255.255.255.252
+no shutdown
+exit
+
+router rip
+version 2
+no auto-summary
+network 10.0.0.0
+end
+write memory
+
+
+! =====================================
+! ROUTER B
+! =====================================
+enable
+configure terminal
+hostname B
+
+interface gigabitEthernet 0/0
+ip address 10.0.12.2 255.255.255.252
+no shutdown
+exit
+
+interface gigabitEthernet 0/1
+ip address 10.0.23.1 255.255.255.252
+no shutdown
+exit
+
+interface gigabitEthernet 0/2
+ip address 10.0.24.1 255.255.255.252
+no shutdown
+exit
+
+router rip
+version 2
+no auto-summary
+network 10.0.0.0
+end
+write memory
+
+
+! =====================================
+! ROUTER C
+! =====================================
+enable
+configure terminal
+hostname C
+
+interface gigabitEthernet 0/0
+ip address 10.0.13.2 255.255.255.252
+no shutdown
+exit
+
+interface gigabitEthernet 0/1
+ip address 10.0.23.2 255.255.255.252
+no shutdown
+exit
+
+interface gigabitEthernet 0/2
+ip address 10.0.34.1 255.255.255.252
+no shutdown
+exit
+
+router rip
+version 2
+no auto-summary
+network 10.0.0.0
+end
+write memory
+
+
+! =====================================
+! ROUTER D
+! =====================================
+enable
+configure terminal
+hostname D
+
+interface gigabitEthernet 0/0
+ip address 10.0.24.2 255.255.255.252
+no shutdown
+exit
+
+interface gigabitEthernet 0/1
+ip address 10.0.34.2 255.255.255.252
+no shutdown
+exit
+
+interface gigabitEthernet 0/2
+ip address 10.0.45.1 255.255.255.252
+no shutdown
+exit
+
+router rip
+version 2
+no auto-summary
+network 10.0.0.0
+end
+write memory
+
+
+! =====================================
+! ROUTER E
+! =====================================
+enable
+configure terminal
+hostname E
+
+interface gigabitEthernet 0/0
+ip address 10.0.45.2 255.255.255.252
+no shutdown
+exit
+
+router rip
+version 2
+no auto-summary
+network 10.0.0.0
+end
+write memory
+
+
+! =====================================
+! VERIFICATION COMMANDS
+! Run separately on each router
+! =====================================
+show ip interface brief
+show ip route
+show ip protocols
