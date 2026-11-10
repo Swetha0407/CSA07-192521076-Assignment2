@@ -1,0 +1,199 @@
+
+! =====================================
+! ROUTER R1
+! =====================================
+enable
+configure terminal
+hostname R1
+
+interface gigabitEthernet 0/0
+ip address 10.0.12.1 255.255.255.252
+ip ospf 1 area 0
+ip ospf cost 10
+no shutdown
+exit
+
+interface gigabitEthernet 0/1
+ip address 10.0.13.1 255.255.255.252
+ip ospf 1 area 0
+ip ospf cost 5
+no shutdown
+exit
+
+router ospf 1
+auto-cost reference-bandwidth 10000
+end
+write memory
+
+
+! =====================================
+! ROUTER R2
+! =====================================
+enable
+configure terminal
+hostname R2
+
+interface gigabitEthernet 0/0
+ip address 10.0.12.2 255.255.255.252
+ip ospf 1 area 0
+ip ospf cost 10
+no shutdown
+exit
+
+interface gigabitEthernet 0/1
+ip address 10.0.23.1 255.255.255.252
+ip ospf 1 area 0
+ip ospf cost 2
+no shutdown
+exit
+
+interface gigabitEthernet 0/2
+ip address 10.0.24.1 255.255.255.252
+ip ospf 1 area 0
+ip ospf cost 1
+no shutdown
+exit
+
+router ospf 1
+auto-cost reference-bandwidth 10000
+end
+write memory
+
+
+! =====================================
+! ROUTER R3
+! =====================================
+enable
+configure terminal
+hostname R3
+
+interface gigabitEthernet 0/0
+ip address 10.0.13.2 255.255.255.252
+ip ospf 1 area 0
+ip ospf cost 5
+no shutdown
+exit
+
+interface gigabitEthernet 0/1
+ip address 10.0.23.2 255.255.255.252
+ip ospf 1 area 0
+ip ospf cost 2
+no shutdown
+exit
+
+interface gigabitEthernet 0/2
+ip address 10.0.34.1 255.255.255.252
+ip ospf 1 area 0
+ip ospf cost 9
+no shutdown
+exit
+
+interface gigabitEthernet 0/3
+ip address 10.0.35.1 255.255.255.252
+ip ospf 1 area 0
+ip ospf cost 2
+no shutdown
+exit
+
+router ospf 1
+auto-cost reference-bandwidth 10000
+end
+write memory
+
+
+! =====================================
+! ROUTER R4
+! =====================================
+enable
+configure terminal
+hostname R4
+
+interface gigabitEthernet 0/0
+ip address 10.0.24.2 255.255.255.252
+ip ospf 1 area 0
+ip ospf cost 1
+no shutdown
+exit
+
+interface gigabitEthernet 0/1
+ip address 10.0.34.2 255.255.255.252
+ip ospf 1 area 0
+ip ospf cost 9
+no shutdown
+exit
+
+interface gigabitEthernet 0/2
+ip address 10.0.46.1 255.255.255.252
+ip ospf 1 area 0
+ip ospf cost 4
+no shutdown
+exit
+
+router ospf 1
+auto-cost reference-bandwidth 10000
+end
+write memory
+
+
+! =====================================
+! ROUTER R5
+! =====================================
+enable
+configure terminal
+hostname R5
+
+interface gigabitEthernet 0/0
+ip address 10.0.35.2 255.255.255.252
+ip ospf 1 area 0
+ip ospf cost 2
+no shutdown
+exit
+
+interface gigabitEthernet 0/1
+ip address 10.0.56.1 255.255.255.252
+ip ospf 1 area 0
+ip ospf cost 6
+no shutdown
+exit
+
+router ospf 1
+auto-cost reference-bandwidth 10000
+end
+write memory
+
+
+! =====================================
+! ROUTER R6
+! =====================================
+enable
+configure terminal
+hostname R6
+
+interface gigabitEthernet 0/0
+ip address 10.0.46.2 255.255.255.252
+ip ospf 1 area 0
+ip ospf cost 4
+no shutdown
+exit
+
+interface gigabitEthernet 0/1
+ip address 10.0.56.2 255.255.255.252
+ip ospf 1 area 0
+ip ospf cost 6
+no shutdown
+exit
+
+router ospf 1
+auto-cost reference-bandwidth 10000
+end
+write memory
+
+
+! =====================================
+! VERIFICATION COMMANDS
+! Run separately on each router
+! =====================================
+show ip ospf neighbor
+show ip ospf interface
+show ip route
+show ip protocols
