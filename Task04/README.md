@@ -39,7 +39,6 @@ Split horizon and poison reverse help prevent routing loops.
 RIP Version 2 is configured on the routers in Cisco Packet Tracer.
 
 - [RIP Router Configurations](Configurations/RIP.txt)
-- [Packet Tracer Simulation](PacketTracer/distance_vector_rip.pkt)
 
 ## 5. Distance Vector vs Link State Routing
 
@@ -69,8 +68,8 @@ traceroute
 
 Evidence screenshots are stored in:
 
-- [Task 4 Evidence](Evidence/tracer.png)
-- [Task 4 Evidence](Evidence/op.png)
+[Task 4 Evidence](Evidence/tracer.png)
+[Task 4 Evidence](Evidence/op.png)
 
 | Evidence File | Description |
 |---|---|
